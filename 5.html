@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <!-- SOLICITE AO USUÁRIO, O PESO E A ALTURA. CALCULE O SEU IMC DIZENDO
+     
+    IMC= PESO/ ALTURA²
+    IMC 	Classificação
+
+    Menor que 18,5 	Magreza
+    18,5 a 24,9 	Normal
+    25 a 29,9 		Sobrepeso
+    30 a 34,9 		Obesidade grau I
+    35 a 39,9 		Obesidade grau II
+    Maior que 40 	Obesidade grau III
+-->
+
+<form action="">
+    Digite o peso:  <br/>
+    <input type="number" id = "peso"/>
+    <br/><br/>
+    Digite a altura: <br/>
+    <input type="number" id="altura"> <br><br>
+
+    <button type="button" onclick="calcular()">Calcular</button>
+    
+    </form>
+    
+    <div id="resposta"></div>
+
+
+    
+    <script>
+            
+            function calcular() {
+            /*pego os dados da tela*/
+            //obter os dados
+
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+            
+            
+            //calculo imc
+            var msg = ``;
+
+            var imc = (peso/(altura ** 2));
+
+            
+            // VERIFICAR A SITUAÇÃO
+
+        if(imc < 18.5){
+            msg = "magreza";
+        }
+        if(imc >= 18.5 && imc < 24.9){      
+            msg = "normal";
+        }
+    
+        if(imc >= 25 && imc < 29.9){        
+            msg = "Sobrepeso";     
+        }
+        if(imc >= 30 && imc < 34.9){        
+            msg = "Obesidade grau I";     
+        }
+        if(imc >= 35 && imc < 39.9){        
+            msg = "Obesidade grau II";     
+        }
+        if(md >= 40){
+            msg = "Obesidade grau III";
+        }
+    
+             // IMPRESSÃO NA TELA
+        document.getElementById("resposta").innerHTML =
+        "Classificação : " + msg + "<br/>" + "imc";
+    }       
+    </script>
+</body>
+</html>
